@@ -38,6 +38,9 @@ captures/
 
 # IntelliJ
 *.iml
+.gradle
+/local.properties
+
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/gradle.xml
@@ -56,6 +59,9 @@ captures/
 #*.keystore
 
 # External native build folder generated in Android Studio 2.2 and later
+.DS_Store
+/build
+/captures
 .externalNativeBuild
 .cxx/
 
