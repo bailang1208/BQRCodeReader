@@ -6,13 +6,5 @@ Android library projects that can scan easy to use Barcode and QRcode based on Z
 
 ## Screenshots
 <img src="/screenshots/image_01.jpeg" width="266">
-
-Go to project folder.
-
-`cp .env.example .env`
-
-`php artisan key:generate`
-
-## Running server
-
-`php artisan serve`
+<img src="/screenshots/image_02.jpeg" width="266">
+<img src="/screenshots/image_03.jpeg" width="266">
