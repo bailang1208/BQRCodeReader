@@ -232,11 +232,11 @@ public class ScanFragment extends Fragment implements SurfaceHolder.Callback, Vi
 
     // /////////////////////////////////////////////////////////////////////////////////////////////
     @Override
-    public void handleDecode(com.google.zxing.Result rawResult, Bundle bundle) {
+    public void handleDecode(String decode) {
         inactivityTimer.onActivity();
         beepManager.playBeepSoundAndVibrate();
 
-        Toast toast = Toast.makeText(getActivity(), rawResult.getText(), Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(getActivity(), decode, Toast.LENGTH_LONG);
         toast.show();
     }
 

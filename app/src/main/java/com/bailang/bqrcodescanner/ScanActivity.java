@@ -46,11 +46,11 @@ public class ScanActivity extends AppCompatActivity implements SurfaceHolder.Cal
     private boolean isHasSurface = false;
 
     @Override
-    public void handleDecode(com.google.zxing.Result rawResult, Bundle bundle) {
+    public void handleDecode(String decode) {
         inactivityTimer.onActivity();
         beepManager.playBeepSoundAndVibrate();
 
-        Toast toast = Toast.makeText(this, rawResult.getText(), Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(this, decode, Toast.LENGTH_LONG);
         toast.show();
     }
 

@@ -39,14 +39,14 @@ public class CaptureFragmentHandler extends Handler {
 
 	@Override
 	public void handleMessage(Message message) {
-		Bundle bundle = message.getData();
 		if (message.what == R.id.restart_preview) {
 			restartPreviewAndDecode();
 		}
 		else if(message.what == R.id.decode_succeeded) {
 			state = State.SUCCESS;
 
-			listener.handleDecode((Result) message.obj, bundle);
+			Result result = (Result) message.obj;
+			listener.handleDecode(result.getText());
 		}
 		else if(message.what == R.id.decode_failed) {
 			// We're decoding as fast as possible, so when one decode fails,
@@ -55,7 +55,8 @@ public class CaptureFragmentHandler extends Handler {
 			cameraManager.requestPreviewFrame(decodeThread.getHandler(), R.id.decode);
 		}
 		else if(message.what == R.id.return_scan_result) {
-			listener.handleDecode((Result) message.obj, bundle);
+			Result result = (Result) message.obj;
+			listener.handleDecode(result.getText());
 		}
 	}
 
